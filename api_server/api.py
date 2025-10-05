@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # ✅ เชื่อมต่อ Firestore
-cred = credentials.Certificate(r"api_server\botranger-firebase-adminsdk-fbsvc-0ead8853b0.json")
+cred = credentials.Certificate(r"botranger-firebase-adminsdk-fbsvc-0ead8853b0.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -63,4 +63,5 @@ def check_subscription():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
 
